@@ -1,4 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const autoprefixer = require('autoprefixer');
+
 module.exports = {
     module: {
         rules: [
@@ -19,15 +21,33 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style-loader'
-            }, {
-                test: /\.scss$/,
-                loader: 'css-loader',
-                options: {
-                    sourceMap: true,
-                    modules: true,
-                    localIdentName: "[local]___[hash:base64:5]"
-                }
+                use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            localIdentName: "[local]___[hash:base64:5]"
+                        }
+                    },
+                    { loader: "postcss-loader",
+                        options: {
+                            ident: 'postcss',
+                            sourceMap: true,
+                            plugins: () => [
+                                autoprefixer({
+                                    browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+                                })
+                            ]
+                        }
+                    },
+                    { loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
             }
         ]
     },
