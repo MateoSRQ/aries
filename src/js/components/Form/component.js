@@ -14,7 +14,6 @@ class Form extends React.Component {
 		//return this.props.children;hello
 		return(
 			<div className={style.main}>Hello</div>
-
 		)
 	}
 }
