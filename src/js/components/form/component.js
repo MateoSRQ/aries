@@ -1,27 +1,25 @@
 import loglevel from "loglevel"
 import React from "react"
-import { render } from "react-dom"
-import { Button } from 'semantic-ui-react'
-// import 'semantic-ui-css/components/reset.css'
-// import 'semantic-ui-css/components/site.css'
-// import 'semantic-ui-css/components/button.css'
+import {render} from "react-dom"
+import {Button} from 'semantic-ui-react'
 import style from './style.scss'
 
 loglevel.info('src/js/components/form/component')
 
-class Form extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+class Component extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-	render() {
-		//return this.props.children;hello
-		return(
-			<React.Fragment>
-				<div className={style.main}>Hello</div>
-				<Button>Click Here</Button>
-			</React.Fragment>
-		)
-	}
+    render() {
+        //return this.props.children;hello
+        return (
+            <React.Fragment>
+                <div className={style.main}>Hello</div>
+                <Button>Click Here</Button>
+            </React.Fragment>
+        )
+    }
 }
-export default Form;
+
+export default Component;
