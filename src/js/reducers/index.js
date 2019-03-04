@@ -1,15 +1,14 @@
 import loglevel from "loglevel";
-import { ADD_ARTICLE } from "../constants/action-types";
+import {NOT_LOGGED, LOGGING} from "../constants/action-types";
+import {notLogged, logging} from "../actions/index";
 
 loglevel.info('src/js/reducers/index')
 
-const initialState = {
-    articles: []
-};
+const initialState = notLogged();
+
 function rootReducer(state = initialState, action) {
-    if (action.type === ADD_ARTICLE) {
+    if (action.type === NOT_LOGGED) {
         return Object.assign({}, state, {
-            articles: state.articles.concat(action.payload)
         });
     }
     return state;

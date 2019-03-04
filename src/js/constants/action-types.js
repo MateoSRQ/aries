@@ -1,4 +1,5 @@
 import loglevel from "loglevel";
 loglevel.info('src/js/constants/action-types')
 
-export const ADD_ARTICLE = "ADD_ARTICLE";
+export const NOT_LOGGED = "NOT_LOGGED";
+export const LOGGING = "LOGGING";
