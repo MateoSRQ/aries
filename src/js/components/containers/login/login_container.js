@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import { NOT_LOGGED, LOGGING } from '../../../actions/index'
 import Container from '../../presentational/container/component'
-// import Form  from '../../presentational/form/component'
 
 const mapStateToProps = state => {
     console.log('mstp')
@@ -17,7 +16,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    toggleTodo: id => dispatch(toggleTodo(id))
+    buttonClick: id => {
+        console.log('mdtp')
+        dispatch(logging(id))
+    }
 })
 
 export default connect(
