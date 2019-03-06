@@ -12,6 +12,7 @@ class Component extends React.Component {
         this.state = {}
         this.state.visible = true
         if (this.props.isVisible != undefined) { this.state.visible = this.props.isVisible}
+        console.log('pres.container.props')
         console.log(this.props)
     }
 

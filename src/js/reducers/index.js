@@ -4,13 +4,18 @@ import {notLogged, logging} from "../actions/index";
 
 loglevel.info('src/js/reducers/index')
 
-const initialState = notLogged();
+const initialState = {
+    status: 'NOT_LOGGED'
+}
 
 function rootReducer(state = initialState, action) {
-    if (action.type === NOT_LOGGED) {
-        return Object.assign({}, state, {
-        });
+    switch(action.type) {
+        case 'LOGGING':
+            return Object.assign({}, state, {
+                status: 'LOGGING'
+            })
+        default:
+            return state
     }
-    return state;
 }
 export default rootReducer;

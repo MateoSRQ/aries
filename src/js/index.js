@@ -17,7 +17,7 @@ const unsubscribe = store.subscribe(() => console.log(store.getState()))
 render(
 <Provider store={store}>
     <div className={style.mainWrapper}>
-        <LoginContainer isSpaced className={style.mainContainer} isVisible>
+        <LoginContainer isSpaced className={style.mainContainer} isVisible={true}>
             <LoginForm hasAccept='Ingresar' />
         </LoginContainer>
     </div>

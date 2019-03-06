@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { NOT_LOGGED, LOGGING } from '../../../actions/index'
 import Form  from '../../presentational/form/component'
+import { notLogged, logging} from "../../../actions/index";
 
 const mapStateToProps = state => {
     return {}

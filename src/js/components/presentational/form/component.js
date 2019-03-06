@@ -9,18 +9,18 @@ loglevel.info('src/js/components/presentational/form/component')
 class Component extends React.Component {
     constructor(props) {
         super(props);
+        console.log('xyz')
+        console.log(this.props)
     }
 
-    buttonClick(e) {
-        console.log(e)
-    }
+
 
     render() {
         let button
         if (this.props.hasAccept) {
             button = <button
                 className="ok ui button"
-                onClick={(e) => this.buttonClick(e)}
+                onClick={(e) => this.props.buttonClick(e)}
             >
             {this.props.hasAccept}
             </button>
